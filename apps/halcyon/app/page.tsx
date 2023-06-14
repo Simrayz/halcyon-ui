@@ -6,7 +6,7 @@ export default async function Index() {
       <div id="welcome" className="space-y-4">
         <h1 className="text-3xl">
           <span> Hello there, </span>
-          Welcome to the Halcyon Playground 👋
+          Welcome to the Halcyon UI Playground 👋
         </h1>
         <div className="space-x-2">
           <Button>A primary medium button</Button>

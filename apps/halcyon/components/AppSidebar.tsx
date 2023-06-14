@@ -1,7 +1,5 @@
 'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { PropsWithChildren } from 'react';
+import { NavLink } from './NavLink';
 
 export function AppSidebar() {
   return (
@@ -13,25 +11,5 @@ export function AppSidebar() {
         <NavLink href="/about">About</NavLink>
       </nav>
     </aside>
-  );
-}
-
-type NavLinkProps = PropsWithChildren<{ href: string; exact?: boolean }>;
-function NavLink({ children, href, exact }: NavLinkProps) {
-  const pathname = usePathname();
-  const activeLink = exact ? pathname === href : pathname.startsWith(href);
-
-  return (
-    <Link
-      href={href}
-      className={[
-        'px-4 py-2 w-full',
-        activeLink
-          ? 'text-blue-600 hover:text-blue-600'
-          : 'hover:text-blue-700',
-      ].join(' ')}
-    >
-      {children}
-    </Link>
   );
 }
